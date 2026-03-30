@@ -19,7 +19,7 @@ class Router
 
     public function comprobarRutas()
     {
-        
+
         // Proteger Rutas...
         session_start();
 
@@ -28,7 +28,8 @@ class Router
 
         // $auth = $_SESSION['login'] ?? null;
 
-        $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
+        $url = $_SERVER['REQUEST_URI'] ?? '/';
+        $currentUrl = strtok($url, '?');
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method === 'GET') {
@@ -38,7 +39,7 @@ class Router
         }
 
 
-        if ( $fn ) {
+        if ($fn) {
             // Call user fn va a llamar una función cuando no sabemos cual sera
             call_user_func($fn, $this); // This es para pasar argumentos
         } else {
