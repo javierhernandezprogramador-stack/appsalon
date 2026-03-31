@@ -6,7 +6,8 @@
         "psr-4": {
             "MVC\\": "./",
             "Controllers\\": "./controllers",
-            "Models\\": "./models"
+            "Models\\": "./models",
+            "Classes\\": "./classes"
         }
     },
     "authors": [
@@ -15,5 +16,7 @@
             "email": "javier.hernandez.programador@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "phpmailer/phpmailer": "^7.0"
+    }
 }
