@@ -9,7 +9,7 @@
         <button type="button" data-paso="3">Resumen</button>
     </nav>
 
-    <div id=" paso-1" class="seccion">
+    <div id="paso-1" class="seccion">
         <h2>Servicios</h2>
         <p class="text-center">Elige tus servicios a continuación</p>
         <div id="servicios" class="listado-servicios"></div>
@@ -33,7 +33,7 @@
             </div>
         </form>
     </div>
-    <div id=" paso-3" class="seccion">
+    <div id="paso-3" class="seccion">
         <h2>Resume</h2>
         <p class="text-center">Verifica que la información sea correcta</p>
     </div>
@@ -43,3 +43,7 @@
         <button id="siguiente" class="boton">Siguiente &raquo;</button>
     </div>
 </div>
+
+<?php
+$script = '<script src="/build/js/bundle.min.js"></script>';
+?>
