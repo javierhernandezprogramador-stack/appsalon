@@ -67,6 +67,41 @@ class Usuario extends ActiveRecord
         return self::$alertas;
     }
 
+    public function validarLogin()
+    {
+        if (!$this->email) {
+            self::$alertas['error'][] = 'El email es Obligatorio';
+        }
+
+        if (!$this->password) {
+            self::$alertas['error'][] = 'El password es Obligatorio';
+        }
+
+        return self::$alertas;
+    }
+
+    public function validarEmail()
+    {
+        if (!$this->email) {
+            self::$alertas['error'][] = 'El Email es Obligatorio';
+        }
+
+        return self::$alertas;
+    }
+
+    public function validarPassword()
+    {
+        if (!$this->password) {
+            self::$alertas['error'][] = 'El Password es obligatorio';
+        }
+
+        if (strlen($this->password) < 6) {
+            self::$alertas['error'][] = 'El password debe tener al menos 6 caracteres';
+        }
+
+        return self::$alertas;
+    }
+
     //Revisa si el usuario ya existe
     public function existeUsuario()
     {
@@ -89,19 +124,6 @@ class Usuario extends ActiveRecord
     public function crearToken()
     {
         $this->token = uniqid();
-    }
-
-    public function validarLogin()
-    {
-        if (!$this->email) {
-            self::$alertas['error'][] = 'El email es Obligatorio';
-        }
-
-        if (!$this->password) {
-            self::$alertas['error'][] = 'El password es Obligatorio';
-        }
-
-        return self::$alertas;
     }
 
     public function comprobarPasswordAndVerificado($password)
