@@ -90,4 +90,28 @@ class Usuario extends ActiveRecord
     {
         $this->token = uniqid();
     }
+
+    public function validarLogin()
+    {
+        if (!$this->email) {
+            self::$alertas['error'][] = 'El email es Obligatorio';
+        }
+
+        if (!$this->password) {
+            self::$alertas['error'][] = 'El password es Obligatorio';
+        }
+
+        return self::$alertas;
+    }
+
+    public function comprobarPasswordAndVerificado($password)
+    {
+        $resultado = password_verify($password, $this->password);
+
+        if (!$resultado || !$this->confirmado) {
+            self::$alertas['error'][] = 'Password Incorrecto o tu cuenta no ha sido confirmada';
+        } else {
+            return true;
+        }
+    }
 }
