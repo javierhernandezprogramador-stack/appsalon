@@ -18,21 +18,22 @@ const paths = {
     js: 'src/js/**/*.js'
 }
 
-export function css(done) {
-    src(paths.scss, { sourcemaps: true })
+export function css() {
+    return src(paths.scss, { sourcemaps: true })
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(dest('./public/build/css', { sourcemaps: '.' }))
-    done()
 }
 
-export function js(done) {
+export function js() {
     console.log("procesando js");
-    src(paths.js)
+    return src(paths.js)
         .pipe(concat('bundle.js'))
-        .pipe(terser())
+        .pipe(terser().on('error', function (err) {
+            console.error(err.toString());
+            this.emit('end');
+        }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest('./public/build/js'))
-    done()
 }
 
 export async function imagenes(done) {
@@ -41,7 +42,7 @@ export async function imagenes(done) {
     const buildDir = path.resolve('./public/build/img')
     const images = await glob('src/img/**/*.{png,jpg,jpeg,svg}')
 
-    if (imagenes.length === 0) {
+    if (images.length === 0) {
         console.log("NO se encuentran imagenes");
         done();
         return;
