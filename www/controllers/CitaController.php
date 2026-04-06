@@ -9,9 +9,11 @@ class CitaController
 
     public static function index(Router $router)
     {
+        isAuth();
+
         $router->render('cita/index', [
-            'nombre' => $_SESSION['nombre'] ?? null,
-            'id' => $_SESSION['id'] ?? null
+            'nombre' => $_SESSION['nombre'],
+            'id' => $_SESSION['id'],
         ]);
     }
 }
