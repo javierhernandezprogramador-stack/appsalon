@@ -25,3 +25,16 @@
         margin-right: 2rem;
     }
 }
+
+.servicios {
+    @extend .citas;//hereda todos los servicios de citas
+
+    .acciones {
+        margin: 0;
+    }
+
+    .boton,
+    .boton-eliminar {
+        margin: 0;
+    }
+}
