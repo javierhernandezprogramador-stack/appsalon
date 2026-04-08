@@ -27,7 +27,7 @@ export function css() {
 export function js() {
     console.log("procesando js");
     return src(paths.js)
-        .pipe(concat('bundle.js'))
+        //.pipe(concat('bundle.js'))
         .pipe(terser().on('error', function (err) {
             console.error(err.toString());
             this.emit('end');

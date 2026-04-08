@@ -27,10 +27,4 @@ class AdminCita extends ActiveRecord
         $this->servicio = $args['servicio'] ?? '';
         $this->precio = $args['precio'] ?? '';
     }
-
-    //CONSULTA SQL PARA ESTE MODELO
-    /*
-        SELECT citas.id, citas.hora, CONCAT(usuarios.nombre, ' ', usuarios.apellido) AS cliente, usuarios.email, usuarios.telefono, servicios.nombre AS servicio, servicios.precio FROM citas LEFT OUTER JOIN usuarios ON citas.usuarioId = usuarios.id LEFT OUTER JOIN citasServicios ON citasServicios.citaId = citas.id LEFT OUTER JOIN servicios ON citasServicios.servicioId = servicios.id;
-    
-    */
 }
