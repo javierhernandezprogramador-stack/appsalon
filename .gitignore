@@ -1,2 +1,4 @@
 www/node_modules
 www/public/build/
+www/vendor
+www/include/.env

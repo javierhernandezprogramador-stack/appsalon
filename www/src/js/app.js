@@ -10,6 +10,8 @@ const cita = {
     servicios: []
 }
 
+//location.origin => ruta base util cuando el frontend o backend estan separado
+
 document.addEventListener('DOMContentLoaded', function () {
     console.log("iniciando...");
     iniciarApp();
@@ -113,7 +115,7 @@ function paginaSiguiente() {
 
 async function consultarAPI() {
     try {
-        const url = 'http://localhost:8080/api/servicios';
+        const url = '/api/servicios';
         const resultado = await fetch(url);
         const servicios = await resultado.json();
 
@@ -327,7 +329,7 @@ async function reservarCita() {
 
     try {
         //Petición hacia la api
-        const url = 'http://localhost:8080/api/citas';
+        const url = '/api/citas';
 
         const respuesta = await fetch(url, {
             method: 'POST',

@@ -89,4 +89,4 @@ export function dev() {
     watch('src/img/**/*.{png,jpg,jpeg,svg}', { usePolling: true }, imagenes)
 }
 
-export default series(js, css, imagenes, dev)
+export default series(js, css, imagenes, dev);

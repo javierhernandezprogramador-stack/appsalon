@@ -19,15 +19,6 @@ class Router
 
     public function comprobarRutas()
     {
-
-        // Proteger Rutas...
-
-
-        // Arreglo de rutas protegidas...
-        // $rutas_protegidas = ['/admin', '/propiedades/crear', '/propiedades/actualizar', '/propiedades/eliminar', '/vendedores/crear', '/vendedores/actualizar', '/vendedores/eliminar'];
-
-        // $auth = $_SESSION['login'] ?? null;
-
         $url = $_SERVER['REQUEST_URI'] ?? '/';
         $currentUrl = strtok($url, '?');
         $method = $_SERVER['REQUEST_METHOD'];
