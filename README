@@ -1,0 +1,191 @@
+# 💈 App Salon
+
+Aplicación web para la gestión de citas en barberías.
+
+## 📌 Descripción
+
+**App Salon** es un sistema que permite a los clientes agendar citas en barberías de manera sencilla, seleccionando servicios, fecha y hora disponibles. Además, cuenta con un panel administrativo para la gestión de servicios y control de citas.
+
+---
+
+## 🚀 Características
+
+### 👤 Autenticación
+
+* Registro de usuarios
+* Inicio de sesión
+* Recuperación de contraseña
+
+### ✂️ Cliente
+
+* Selección de servicios
+* Agendar cita (fecha y hora)
+* Visualización de resumen de cita
+
+### 🛠️ Administrador
+
+* Visualización de citas por fecha
+* Gestión de servicios:
+
+  * Crear
+  * Listar
+  * Actualizar
+  * Eliminar
+
+---
+
+## 🧱 Tecnologías utilizadas
+
+### Backend
+
+* PHP 8
+* Arquitectura MVC
+* Active Record
+* MySQL
+
+### Frontend
+
+* JavaScript (Fetch API)
+* SASS
+
+### Herramientas
+
+* Node.js
+* NPM
+* Gulp
+* Composer
+* Docker
+
+---
+
+## 📁 Estructura del proyecto
+
+```
+app-salon/
+│── public/
+│── src/
+│   ├── Controllers/
+│   ├── Models/
+│   ├── Views/
+│   └── Includes/
+│── vendor/
+│── node_modules/
+│── gulpfile.js
+│── package.json
+│── composer.json
+│── docker-compose.yml
+```
+
+---
+
+## ⚙️ Instalación
+
+### 1. Clonar el repositorio
+
+```
+git clone <URL_DEL_REPOSITORIO>
+cd app-salon
+```
+
+### 2. Configurar variables de entorno
+
+Crear archivo `.env` basado en `.env.example` y configurar:
+
+```
+DB_HOST=
+DB_NAME=
+DB_USER=
+DB_PASS=
+```
+
+### 3. Instalar dependencias
+
+#### Backend (Composer)
+
+```
+composer install
+```
+
+#### Frontend (NPM)
+
+```
+npm install
+```
+
+### 4. Ejecutar Gulp
+
+```
+npm run dev
+```
+
+### 5. Levantar contenedores Docker
+
+```
+docker-compose up -d
+```
+
+---
+
+## 🗄️ Base de datos
+
+* Motor: MySQL
+* Manejo mediante Active Record
+
+> Asegúrate de importar el esquema de la base de datos si es necesario.
+
+---
+
+## 📡 API / Comunicación
+
+La aplicación utiliza **Fetch API** para la comunicación asíncrona entre el frontend y el backend.
+
+---
+
+## 🧪 Funcionalidades principales
+
+* Registro y autenticación de usuarios
+* Creación de citas
+* Administración de servicios
+* Consulta de citas por fecha
+
+---
+
+## 📦 Scripts disponibles
+
+```
+npm run dev      # Compila archivos con Gulp
+npm run build    # Compilación para producción
+```
+
+---
+
+## 🐳 Docker
+
+El proyecto está completamente dockerizado.
+
+Comandos útiles:
+
+```
+docker-compose up -d
+docker-compose down
+```
+
+---
+
+## 📌 Notas
+
+* Proyecto desarrollado bajo arquitectura MVC.
+* Uso de Active Record para manejo de base de datos.
+* Separación clara entre lógica de negocio y presentación.
+
+---
+
+## 👨‍💻 Autor
+
+Desarrollado por Javier Eduardo Hernández Sánchez
+
+---
+
+## 📄 Licencia
+
+Este proyecto es de uso académico y/o personal.
