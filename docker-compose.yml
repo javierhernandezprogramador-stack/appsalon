@@ -28,6 +28,7 @@ services:
       - "3306:3306"
     volumes:
       - .www:/var/lib/mysql
+      - ./www/database:/docker-entrypoint-initdb.d
     networks:
       - app-networkphp
   
@@ -39,7 +40,7 @@ services:
       - ./www:/var/www/html
     ports:
       - "3001:3000"
-    command: sh -c "npm install && npm run dev"
+    command: sh -c "npm install && npm run build"
 
 volumes:
   db_data:
